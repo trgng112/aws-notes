@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AWS SAA-CO3/ELB.md",
+                "file": "AWS SAA-CO3/RDS and Aurora.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ELB"
+              "title": "RDS and Aurora"
             }
           }
         ]
@@ -170,23 +170,24 @@
   },
   "active": "dfebdc05eed1b1fe",
   "lastOpenFiles": [
-    "Pasted image 20250720123739.png",
-    "Pasted image 20250720123738.png",
-    "Pasted image 20250720123735.png",
-    "Pasted image 20250720123731.png",
-    "Pasted image 20250720123624.png",
-    "AWS SAA-CO3/ELB.md",
-    "Pasted image 20250720123528.png",
-    "Pasted image 20250720123456.png",
-    "Pasted image 20250720123211.png",
-    "Pasted image 20250720122804.png",
-    "Pasted image 20250720122803.png",
-    "Pasted image 20250720122757.png",
+    "Pasted image 20250721214351.png",
+    "Pasted image 20250721214327.png",
+    "Pasted image 20250721214252.png",
+    "Pasted image 20250721214251.png",
+    "AWS SAA-CO3/RDS and Aurora.md",
+    "Pasted image 20250716210531.png",
+    "Pasted image 20250721213535.png",
+    "Pasted image 20250721212812.png",
+    "Pasted image 20250721212543.png",
+    "Pasted image 20250721212419.png",
+    "Pasted image 20250721212238.png",
+    "Pasted image 20250721212105.png",
     "AWS SAA-CO3/EFS.md",
+    "AWS SAA-CO3/EC2.md",
+    "AWS SAA-CO3/ELB.md",
+    "AWS SAA-CO3/IAM.md",
     "AWS SAA-CO3/Course.md",
     "AWS SAA-CO3/AWS Regions.md",
-    "AWS SAA-CO3/EC2.md",
-    "AWS SAA-CO3/IAM.md",
     "Welcome.md",
     "Untitled.md",
     "AWS SAA-CO3"
