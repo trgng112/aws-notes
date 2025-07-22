@@ -225,3 +225,104 @@
 - No SSH available except for RDS custom
 - Audit logs can be enabled and sent to cloudwatch logs for longer retention
 
+
+
+
+### Amazon ElastiCache
+- RDS is to get managed Relational Databases
+- ElastiCache is to get managed Redis or Memcached
+- caches are in-memory databases with really high performance, low latency
+- Helps reduce load off of databases for read intensive workloads
+- Helps make your application stateless
+- AWS takes care of OS maintenance / patching, optimizations, setup, configuration,monitoring,failure recovery and backups
+- Using ElastiCache involves heavy application code changes
+
+#### DB Cache
+- Application queries ElastiCache, if not available, get from RDS and store in ElastiCache
+- Help relive load in RDS
+- Cache must have an invalidation strategy to make sure only the most current data is used in there
+- ![[Pasted image 20250722232938.png]]
+
+#### User Session Store
+- User logs into any of the application
+- The application writes the session data into ElastiCache
+- The user hits another instance of our application 
+- The instance retrieves the data and the user is already logged in 
+- ![[Pasted image 20250722233026.png]]
+
+#### Redis vs Memcached
+
+- Redis:
+	- Multi AZ with Auto-Failover
+	- Read Replicas to scale reads and have high availability
+	- Data Durability using AOF persistence
+	- Backup and restore features
+	- Supports Sets and Sorted Sets
+- Memcached:
+	- Multi node for partitioning of data (sharding)
+	- No high availability (replication)
+	- Non persistent
+	- Backup and restore (serverless)
+- ![[Pasted image 20250722233205.png]]
+
+#### Cache Security
+- ElastiCache supports IAM authentication for Redis
+- IAM policies on ElastiCache are onjly used for AWS API-level security
+- Redis AUTH
+	- you can set a password/token when you create a redis cluster
+	- This is an extra level of security for your cache (on top of Security groups)
+	- Support SSL in flight encryption
+- Memcached
+	- Supports SASL - based authentication3
+- ![[Pasted image 20250722233712.png]]
+
+#### Patterns for ElastiCache
+- Lazy Loading: all the read data is cached, data can become stale in cache
+	- ![[Pasted image 20250722233828.png]]
+- Write Through: Adds or update data in the cache when written to a DB (no stale data)
+- Session Store: store temporary session data in a cache  (using TTL features)
+
+#### Redis Use Case
+- Gaming leaderboards are computationally complex
+- **Redis sorted sets** guarantee both uniqueness and element ordering
+- Each time a new element added, it's ranked in real time, then added in the correct order
+- ![[Pasted image 20250722233923.png]]
+
+
+#### List of Ports to be familiar with
+
+Here's a list of **standard** ports you should see at least once. You shouldn't remember them (the exam will not test you on that), but **you should be able to differentiate between an Important (HTTPS - port 443) and a database port (PostgreSQL - port 5432)** 
+
+**Important ports:**
+
+- FTP: 21
+    
+- SSH: 22
+    
+- SFTP: 22 (same as SSH)
+    
+- HTTP: 80
+    
+- HTTPS: 443
+    
+
+**vs RDS Databases ports:**
+
+- PostgreSQL: 5432
+    
+- MySQL: 3306
+    
+- Oracle RDS: 1521
+    
+- MSSQL Server: 1433
+    
+- MariaDB: 3306 (same as MySQL)
+    
+- Aurora: 5432 (if PostgreSQL compatible) or 3306 (if MySQL compatible)
+    
+
+  
+
+> Don't stress out on remember those, just read that list once today and once before going into the exam and you should be all set :)
+> 
+> Remember, you should just be able to differentiate an "Important Port" vs an "RDS database Port".
