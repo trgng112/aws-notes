@@ -1,207 +1,282 @@
-### Elastic Load Balancer
+# ELB - Elastic Load Balancer
+
+## Overview
+
+### What is a Load Balancer?
+Load balancers distribute incoming application traffic across multiple targets, such as EC2 instances, containers, and IP addresses.
+
 ![[Pasted image 20250719202129.png]]
 
-- Why use a load balancer
-	- Spread load across multiple downstream instances
-	- expose a single point of access (DNS) to app
-	- handle failures of downstream services
-	- health checks
-	- provide SSL termination (HTTPS) for websites
-	- enforce stickiness with cookies
-	- high availability across zones
-	- separate public from private traffic
-	- is a managed load balancer
-		- aws guarantees it will be working
-		- aws take cares of upgrades, maintenance 
-		- aws provides a few configs knobs
-	- integrated with many AWS services
-		- ec2,ecs
-		- aws certificate manager, cloudwatch,
-		- route 53, waf, global accelerator
-	- Health checks
-		- Enable the load balancer to know if the instance is available to reply to requests
-		- crucial for load balancers
-		- check by ports and routes (/health)
-		- if the response is not 200, it is unhealthy
-	- Types:
-		- classic load balancer - CLB - deprecated
-		- Application load balancer - ALB 
-			- HTTPS,HTTPS,websocket
-		- Network load Balancer - NLB
-			- TCP TLS UDP
-		- Gateway load balancer - GWLB
-			- Operated at layer 3 - IP protocol
-		- recommended to use the latest version
-		- can be set up as internal (private) or external (public) ELBs
+### Why Use a Load Balancer?
+- **Traffic Distribution**: Spread load across multiple downstream instances
+- **Single Access Point**: Expose a single point of access (DNS) to your application
+- **Fault Tolerance**: Handle failures of downstream services
+- **Health Monitoring**: Perform health checks on instances
+- **SSL Termination**: Provide SSL termination (HTTPS) for websites
+- **Session Management**: Enforce stickiness with cookies
+- **High Availability**: Enable high availability across zones
+- **Traffic Separation**: Separate public from private traffic
 
+### AWS Managed Service Benefits
+- **Reliability**: AWS guarantees it will be working
+- **Maintenance**: AWS takes care of upgrades and maintenance
+- **Configuration**: AWS provides configuration options
+- **Integration**: Integrated with many AWS services (EC2, ECS, ACM, CloudWatch, Route 53, WAF, Global Accelerator)
 
-### Load balancer security groups
+## Health Checks
+
+### How Health Checks Work
+- Enable the load balancer to know if instances are available to reply to requests
+- Crucial for load balancer functionality
+- Check by ports and routes (e.g., `/health`)
+- If the response is not 200 (OK), the instance is marked as unhealthy
+
+## Load Balancer Types
+
+### Overview of Types
+- **Classic Load Balancer (CLB)** - *Deprecated*
+- **Application Load Balancer (ALB)** - HTTP, HTTPS, WebSocket
+- **Network Load Balancer (NLB)** - TCP, TLS, UDP
+- **Gateway Load Balancer (GWLB)** - Operates at Layer 3 (IP protocol)
+
+**Recommendation**: Use the latest versions for better features and performance
+
+**Deployment Options**: Can be set up as internal (private) or external (public) ELBs
+
+## Security Groups for Load Balancers
+
 ![[Pasted image 20250719232249.png]]
 
-### Application Load balancer - ALB
+## Application Load Balancer (ALB)
 
-- Layer 7 - HTTP
-- Load balancing to multiple HTTP aplications across machines (target groups)
-- load balancing to multiple applications on the same machine (containers)
-- support for HTTP/2 and websocket
-- support redirects (from HTTP to HTTPS for example)
-- routing tables to different target groups
-	- routing based on path in URL (example.com/users & example.com/posts)
-	- routing based on hostname in URL (one.example.com & other.example.com)
-	- routing based on Query string, header (example.com/users?id=123&order=false)
-- Great fit for microservices and container based application (docker and amazon ecs)
-- has a port mapping feature to redirect to a dynamic port in ECS
-- in comparison, we'd need multiple CLB per app
-- ![[Pasted image 20250719232654.png]]
-- Target groups
-	- EC2 instances (can be managed by an Auto Scaling Group) - HTTP
-	- ECS tasks( managed by ECS itself) - HTTP
-	- Lambda functions - HTTP request is translated into a JSON event
-	- IP addresses - must be private IPs
-	- ALB can route to multiple target groups
-	- Health checks are at the target group level
-- ![[Pasted image 20250719232847.png]]
-- fixed hostname
-- the application servers don't see the IP of the client directly (x the header `x-Forwarded-For)
-- We can also get port `X-Forwarded-port` and proto `X-Forwarded-Proto`
-- ![[Pasted image 20250719233015.png]]
+### Overview
+- **Layer 7**: Operates at HTTP level
+- **Multi-Application Support**: Load balancing to multiple HTTP applications across machines (target groups)
+- **Container Support**: Load balancing to multiple applications on the same machine (containers)
+- **Protocol Support**: HTTP/2 and WebSocket
+- **Redirects**: Support redirects (e.g., HTTP to HTTPS)
 
-### Network load balancer - NLB
+### Routing Capabilities
+- **Path-based routing**: Route based on path in URL (`example.com/users` & `example.com/posts`)
+- **Hostname-based routing**: Route based on hostname (`one.example.com` & `other.example.com`)
+- **Query string/Header routing**: Route based on query string or headers (`example.com/users?id=123&order=false`)
 
-- Layer4
-- Allows:
-	- Forward TCP & UDP traffic to your instances
-	- Handle millions of request per seconds
-	- ultra low latency
-- NLB has one static IP per AZ, and supports assigning Elastic IP (helpful for whitelisting specific IP)
-- NLB are used for extreme performance, TCP or UDP traffic
-- not included in AWS free tier
-- ![[Pasted image 20250719234827.png]]
-- Target groups:
-	- EC2 instances
-	- IP addresses - must be private IPs
-	- Application load balancer - ALB 
-	- Health check support the TCP HTTP and HTTPS protocols
-	- ![[Pasted image 20250719234906.png]]
+### Use Cases
+- **Microservices**: Great fit for microservices and container-based applications
+- **Docker & ECS**: Works well with Docker and Amazon ECS
+- **Dynamic Ports**: Has port mapping feature to redirect to dynamic ports in ECS
+- **Multiple Applications**: In comparison, you'd need multiple CLBs per application
 
+![[Pasted image 20250719232654.png]]
 
-### Gateway Load Balancer GWLB
+### Target Groups
+- **EC2 instances**: Can be managed by an Auto Scaling Group (HTTP)
+- **ECS tasks**: Managed by ECS itself (HTTP)
+- **Lambda functions**: HTTP request is translated into a JSON event
+- **IP addresses**: Must be private IPs
+- **Multi-Target Support**: ALB can route to multiple target groups
+- **Health Checks**: Performed at the target group level
 
-- Deploy, scale, manage a fleet of 3rd party network virtual appliances in AWS
-	- Firewalls, intrusion detection and prevention system, payload manipulation
-- Layer 3(network layer) - IP packets
-- combines the following functions
-	- Transparent Network Gateway - single entry/exit for all traffic
-	- Load balancer - distributes traffic to your virtual appliances
-	- ![[Pasted image 20250720120936.png]]
-- Uses the GENEVE protocol on port 6081
-- Target groups
-	- EC2 instances
-	- Ip addresses - must be private IPs
-	- ![[Pasted image 20250720121031.png]]
+![[Pasted image 20250719232847.png]]
 
+### Client Connection Details
+- **Fixed hostname**: ALB provides a fixed hostname
+- **Client IP**: Application servers don't see the client IP directly
+- **Headers**: Use `X-Forwarded-For` header to get client IP
+- **Additional Headers**: Can also get port (`X-Forwarded-Port`) and protocol (`X-Forwarded-Proto`)
 
-### Sticky sessions
-- It is possible to implement stickiness so that the same client is always redirected to the same instance behine a load balancer
-- Works for CLB, ALB, NLB
-- cookie used for stickiness has a set expiration date
-- use case: make sure the user doesn't lose his session data
-- ![[Pasted image 20250720121154.png]]
-- Cookie names
-	- App-based cookies
-		- Custom cookie
-			- generated by the target
-			- can include any custom attributes required by the applciation
-			- cookie name must be specified individually for each target group
-			- dont use `AWSALB`, `AWSALBAPP` or `AWSALBTG` (reserved for use by the ALB)
-		- Application cookie
-			- generated by the load balancer
-			- cookie name is AWSALBAPP
-	- Duration-based Cookies
-		- Cookie generated by the load balancer
-		- cookie name is `AWSALB` for ALB, `AWSELB` for CLB
-- Cross zone load balancer
-	- Each load balancer instance distributes evenly across all registered instances in all AZ
-	- ![[Pasted image 20250720121901.png]]
-	- Application load balancer
-		- Enabled by default (can be disabled at the target group level)
-		- no charges for infer AZ data
-	- NLB and GLB
-		- disabled by default
-		- you pay charges for inter AZ data if enabled
-	- CLB 
-		- disabled by default
-		- not charged for infer AZ data
+![[Pasted image 20250719233015.png]]
 
-#### SSL/TLS
-- An SSL Certificate allows traffic between your clients and your load balacner to be encrypted in transit (in-flight encryption)
-- SSL refers to **secure sockets layer,** used to encrypt connections
-- TLS refers to Transport layer security- mainly used , people still refer as SSL
-- Public SSL certs are issued by Certificate Authorities (CA)
-- Comodo,Symantec,GoDaddy,GlobalSign,..
-- has an set expiration date and can be renewed
-- ![[Pasted image 20250720122428.png]]
-- the LB uses and X.509 certs (SSL/TLS server cert)
-- manage certs using ACM (AWS Certificate Manager)
-- can create upload your own certs
-- HTTPS listener:
-	- must specify default cert
-	- add additional list of certs to support multiple domains
-	- clients can use SNI (**Server Name Indication**) to specify the hostname they reach
-- SNI: Solves the problem of loading multiple SSL certs onto one web server
-	- newer protocol, requires the client ot indicate the hostname of the target server in the initial SSL handshake
-	- server will then find the correct cert, or return the defautl one
-	- Only works for ALB & NLB, Cloudfront
-	- ![[Pasted image 20250720122804.png]]
-	- ALB and NLB can support multiple listeners with multiple SSL certs, uses SNI to make it works
+## Network Load Balancer (NLB)
 
-#### Connection Draining
- - Feature naming
-	 - Connection Draining - CLB
-	 - Deregistration Delay  - ALB & NLB
- - Time to complete " in-flight requests" while the instance is de-registering or unhealthy
- - stops sending new requests to the EC2 instance which is de-registering
- - Between 1 to 3600 seconds (default 300 secs)
- - Can be disabled (set value to 0)
- - set a low value if your requests are short 
- - ![[Pasted image 20250720123211.png]]
+### Overview
+- **Layer 4**: Operates at transport layer
+- **High Performance**: Handle millions of requests per second
+- **Ultra Low Latency**: Optimized for performance
+- **Static IP**: One static IP per AZ, supports assigning Elastic IP
+- **Use Cases**: Extreme performance requirements, TCP or UDP traffic
+- **Cost**: Not included in AWS free tier
 
-#### Auto scaling group - ASG
-- in real-life, the load on your websites and apps can change
-- in the cloud, you can create and get rid of servers very quickly
-- The goal of ASG is to
-	- scale out (add ec2 instances) to match increase load
-	- scale in (remove ec2 instances) to match a decrease load
-	- ensure we have a minimum and a maximum number of ec2 instances running
-	- automatically register new instances to a load balancer
-	- re-create an ec2 instance in case a previous one is terminated (unhealthy)
-- ASG are free
-- ![[Pasted image 20250720123456.png]]
-- ![[Pasted image 20250720123528.png]]
-- A Launch template
-- ![[Pasted image 20250720123624.png]]
-- Possible to scale ASG based on Cloudwatch alarms
-- alarms monitors a metric (such as Average CPU, or a custom metric)
-- Metrics such as Average CPU are computed for the overall ASG instances
-- Based on the alarm:
-	- we can create scale out policy (increase)
-	- we can create scale in policy (decrease)
-	- ![[Pasted image 20250720123739.png]]
-- Scaling policies
-	- Dynamic Scaling
-		- Target tracking scaling
-			- Simple to set up
-			- example: I want the average ASG CPU to stay at around 40%
-		- Simple/ Step Scaling
-			- when cloudwatch alarm is triggered (CPU >70%) add 2 units
-			- when cloudwatch alarm is triggered (cpu <30%) remove 1
-	- Scheduled scaling
-		- Anticipate a scaling based on known usage patterns
-		- Example: increase the min capacity to 10 at 5pm on Fridays
-	- Predictive scaling: continuously forecast load and schedule scaling ahead
-	- good metrics: CPU utilization, RequestCoundPerTarget, Average Network In/Out
-- Scaling cooldown
-	- After a scaling activity happens, you are in the cooldown period (300 secs)
-	- ASG will not launch or terminal additional instances (metrics to stabilize)
-	-  advice: use a ready-to-use AMI to reduce configs time in order to be serving request fasters and reduce the cooldown period
-	- 
+![[Pasted image 20250719234827.png]]
+
+### Target Groups
+- **EC2 instances**
+- **IP addresses**: Must be private IPs
+- **Application Load Balancer**: Can target ALB for advanced routing
+- **Health Checks**: Support TCP, HTTP, and HTTPS protocols
+
+![[Pasted image 20250719234906.png]]
+
+## Gateway Load Balancer (GWLB)
+
+### Overview
+- **Purpose**: Deploy, scale, and manage a fleet of 3rd party network virtual appliances in AWS
+- **Use Cases**: Firewalls, intrusion detection and prevention systems, payload manipulation
+- **Layer 3**: Operates at network layer (IP packets)
+- **Protocol**: Uses GENEVE protocol on port 6081
+
+### Functions
+- **Transparent Network Gateway**: Single entry/exit point for all traffic
+- **Load Balancer**: Distributes traffic to your virtual appliances
+
+![[Pasted image 20250720120936.png]]
+
+### Target Groups
+- **EC2 instances**
+- **IP addresses**: Must be private IPs
+
+![[Pasted image 20250720121031.png]]
+
+## Advanced Features
+
+### Sticky Sessions (Session Affinity)
+- **Purpose**: Ensure the same client is always redirected to the same instance
+- **Compatibility**: Works for CLB, ALB, NLB
+- **Mechanism**: Uses cookies with set expiration dates
+- **Use Case**: Prevent users from losing session data
+
+![[Pasted image 20250720121154.png]]
+
+#### Cookie Types
+
+##### Application-Based Cookies
+**Custom Cookie**:
+- Generated by the target application
+- Can include any custom attributes required by the application
+- Cookie name must be specified individually for each target group
+- Cannot use reserved names: `AWSALB`, `AWSALBAPP`, or `AWSALBTG`
+
+**Application Cookie**:
+- Generated by the load balancer
+- Cookie name is `AWSALBAPP`
+
+##### Duration-Based Cookies
+- Generated by the load balancer
+- Cookie name is `AWSALB` for ALB, `AWSELB` for CLB
+
+### Cross-Zone Load Balancing
+- **Function**: Each load balancer instance distributes evenly across all registered instances in all AZs
+
+![[Pasted image 20250720121901.png]]
+
+#### Configuration by Load Balancer Type
+
+**Application Load Balancer (ALB)**:
+- Enabled by default (can be disabled at target group level)
+- No charges for inter-AZ data transfer
+
+**Network Load Balancer (NLB) and Gateway Load Balancer (GWLB)**:
+- Disabled by default
+- Charges apply for inter-AZ data transfer if enabled
+
+**Classic Load Balancer (CLB)**:
+- Disabled by default
+- No charges for inter-AZ data transfer
+
+## SSL/TLS Configuration
+
+### Overview
+- **Purpose**: SSL Certificate allows traffic encryption between clients and load balancer
+- **SSL vs TLS**: SSL (Secure Sockets Layer) is older; TLS (Transport Layer Security) is current standard
+- **Certificate Authorities**: Public SSL certificates issued by CAs (Comodo, Symantec, GoDaddy, GlobalSign)
+- **Expiration**: Certificates have expiration dates and must be renewed
+
+![[Pasted image 20250720122428.png]]
+
+### Certificate Management
+- **Certificate Type**: Load balancer uses X.509 certificates (SSL/TLS server certificates)
+- **AWS Certificate Manager (ACM)**: Manage certificates using ACM
+- **Custom Certificates**: Can create and upload your own certificates
+
+### HTTPS Listener Configuration
+- **Default Certificate**: Must specify a default certificate
+- **Multiple Domains**: Add additional certificates to support multiple domains
+- **SNI Support**: Clients can use Server Name Indication (SNI) to specify hostname
+
+### Server Name Indication (SNI)
+- **Problem Solved**: Loading multiple SSL certificates onto one web server
+- **How it Works**: Client indicates target server hostname in initial SSL handshake
+- **Certificate Selection**: Server finds correct certificate or returns default
+- **Compatibility**: Only works for ALB, NLB, and CloudFront
+
+![[Pasted image 20250720122804.png]]
+
+## Connection Draining
+
+### Feature Names
+- **Connection Draining**: Classic Load Balancer (CLB)
+- **Deregistration Delay**: Application Load Balancer (ALB) & Network Load Balancer (NLB)
+
+### How It Works
+- **Purpose**: Time to complete "in-flight requests" while instance is de-registering or unhealthy
+- **Behavior**: Stops sending new requests to EC2 instance being de-registered
+- **Duration**: Between 1 to 3600 seconds (default: 300 seconds)
+- **Disable Option**: Can be disabled by setting value to 0
+- **Best Practice**: Set low value if requests are short
+
+![[Pasted image 20250720123211.png]]
+
+## Auto Scaling Groups (ASG)
+
+### Overview
+- **Purpose**: Automatically adjust the number of EC2 instances based on demand
+- **Real-world Need**: Website and application load changes over time
+- **Cloud Advantage**: Can create and terminate servers quickly
+
+### Goals of Auto Scaling Groups
+- **Scale Out**: Add EC2 instances to match increased load
+- **Scale In**: Remove EC2 instances to match decreased load
+- **Instance Limits**: Ensure minimum and maximum number of instances
+- **Load Balancer Integration**: Automatically register new instances to load balancer
+- **Instance Replacement**: Re-create EC2 instances if previous ones are terminated (unhealthy)
+- **Cost**: ASG service is free (only pay for EC2 instances)
+
+![[Pasted image 20250720123456.png]]
+
+![[Pasted image 20250720123528.png]]
+
+### Launch Template
+Configuration template that defines instance specifications for Auto Scaling Group.
+
+![[Pasted image 20250720123624.png]]
+
+### CloudWatch Integration
+- **Scaling Triggers**: Scale ASG based on CloudWatch alarms
+- **Metrics Monitoring**: Alarms monitor metrics (Average CPU, custom metrics)
+- **Instance-Level Metrics**: Metrics computed for overall ASG instances
+- **Scale-Out Policy**: Increase instances based on alarms
+- **Scale-In Policy**: Decrease instances based on alarms
+
+![[Pasted image 20250720123739.png]]
+
+### Scaling Policies
+
+#### Dynamic Scaling
+
+**Target Tracking Scaling**:
+- Simple to set up
+- Example: Maintain average ASG CPU at around 40%
+
+**Simple/Step Scaling**:
+- Triggered by CloudWatch alarms
+- Example: Add 2 units when CPU > 70%, remove 1 unit when CPU < 30%
+
+#### Scheduled Scaling
+- **Use Case**: Anticipate scaling based on known usage patterns
+- **Example**: Increase minimum capacity to 10 at 5pm on Fridays
+
+#### Predictive Scaling
+- **Function**: Continuously forecast load and schedule scaling ahead
+- **Benefit**: Proactive rather than reactive scaling
+
+### Scaling Metrics
+**Good Metrics for Scaling**:
+- CPU Utilization
+- RequestCountPerTarget
+- Average Network In/Out
+
+### Scaling Cooldown
+- **Duration**: After scaling activity, cooldown period is 300 seconds (default)
+- **Behavior**: ASG will not launch or terminate additional instances during cooldown
+- **Purpose**: Allow metrics to stabilize
+- **Best Practice**: Use ready-to-use AMI to reduce configuration time and serve requests faster, reducing cooldown period
