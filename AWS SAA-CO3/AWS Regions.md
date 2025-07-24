@@ -15,3 +15,4 @@ AWS data centers
 AWS Edge Locations
 	- Has 400+ points of presence
 https://infrastructure.aws/
+

@@ -326,3 +326,7 @@ Here's a list of **standard** ports you should see at least once. You shouldn't 
 > Don't stress out on remember those, just read that list once today and once before going into the exam and you should be all set :)
 > 
 > Remember, you should just be able to differentiate an "Important Port" vs an "RDS database Port".
+
+
+
+
