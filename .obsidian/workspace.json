@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AWS SAA-CO3/RDS and Aurora and ElasticCache.md",
+                "file": "AWS SAA-CO3/EC2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "RDS and Aurora and ElasticCache"
+              "title": "EC2"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "create a link.md",
+                "file": "AWS SAA-CO3/EC2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for create a link"
+              "title": "Backlinks for EC2"
             }
           },
           {
@@ -142,21 +142,21 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "create a link.md",
+                "file": "AWS SAA-CO3/EC2.md",
                 "followCursor": true,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of create a link"
+              "title": "Outline of EC2"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -170,26 +170,26 @@
   },
   "active": "971b4b1333f680ce",
   "lastOpenFiles": [
-    "AWS SAA-CO3/ELB.md",
     "AWS SAA-CO3/EFS.md",
-    "AWS SAA-CO3/EC2.md",
+    "AWS SAA-CO3/ELB.md",
     "AWS SAA-CO3/RDS and Aurora and ElasticCache.md",
-    "AWS SAA-CO3/IAM.md",
+    "AWS SAA-CO3/EC2.md",
     "AWS SAA-CO3/Route 53.md",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250725172608.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250725172533.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250725172226.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250725172056.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250725170436.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250725170424.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250725165927.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250725165547.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250725165140.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250725165027.png",
+    "AWS SAA-CO3/IAM.md",
     "AWS SAA-CO3/Course.md",
     "2025-07-24.md",
     "create a link.md",
     "AWS SAA-CO3/AWS Regions.md",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250724212320.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250723232210.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250723231549.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250723230350.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250723225836.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250723225652.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250723225422.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250723225419.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250723225417.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250722233923.png",
     "AWS SAA-CO3/pasted_images",
     "AWS SAA-CO3/test_images",
     "Untitled.canvas",
