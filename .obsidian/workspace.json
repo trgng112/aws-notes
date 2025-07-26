@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AWS SAA-CO3/EC2.md",
+                "file": "AWS SAA-CO3/S3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "EC2"
+              "title": "S3"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "AWS SAA-CO3/EC2.md",
+                "file": "AWS SAA-CO3/S3.md",
                 "followCursor": true,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of EC2"
+              "title": "Outline of S3"
             }
           }
         ],
@@ -170,21 +170,24 @@
   },
   "active": "971b4b1333f680ce",
   "lastOpenFiles": [
+    "AWS SAA-CO3/pasted_images/Pasted image 20250726132110.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250726122910.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250726122831.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250726122821.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250726122811.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250726122803.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250726122705.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250726115747.png",
+    "AWS SAA-CO3/Beanstalk.md",
+    "AWS SAA-CO3/S3.md",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250726114855.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250726114837.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250726114756.png",
+    "AWS SAA-CO3/Route 53.md",
+    "AWS SAA-CO3/EC2.md",
     "AWS SAA-CO3/EFS.md",
     "AWS SAA-CO3/ELB.md",
     "AWS SAA-CO3/RDS and Aurora and ElasticCache.md",
-    "AWS SAA-CO3/EC2.md",
-    "AWS SAA-CO3/Route 53.md",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250725172608.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250725172533.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250725172226.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250725172056.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250725170436.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250725170424.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250725165927.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250725165547.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250725165140.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250725165027.png",
     "AWS SAA-CO3/IAM.md",
     "AWS SAA-CO3/Course.md",
     "2025-07-24.md",

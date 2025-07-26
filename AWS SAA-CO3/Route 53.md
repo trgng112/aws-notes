@@ -223,3 +223,6 @@
 	- Update NS records on 3rd party website to use Route 53 Name Servers
 - **Domain Registrar** != DNS Service
 - But every Domain Registrar usually comes with some DNS features
+
+
+
