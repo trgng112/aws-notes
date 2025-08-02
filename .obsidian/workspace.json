@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AWS SAA-CO3/Lambda & DynamoDB & Serverless.md",
+                "file": "AWS SAA-CO3/Data and Analytics.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lambda & DynamoDB & Serverless"
+              "title": "Data and Analytics"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "AWS SAA-CO3/Lambda & DynamoDB & Serverless.md",
-                "followCursor": true,
-                "showSearch": true,
+                "file": "AWS SAA-CO3/Data and Analytics.md",
+                "followCursor": false,
+                "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Lambda & DynamoDB & Serverless"
+              "title": "Outline of Data and Analytics"
             }
           }
         ],
@@ -170,6 +170,23 @@
   },
   "active": "9273427225afbba1",
   "lastOpenFiles": [
+    "AWS SAA-CO3/Databases.md",
+    "AWS SAA-CO3/Data and Analytics.md",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250802130815.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250802130230.png",
+    "Welcome.md",
+    "create a link.md",
+    "2025-07-24.md",
+    "AWS SAA-CO3/EFS.md",
+    "AWS SAA-CO3/ELB.md",
+    "AWS SAA-CO3/ECS & EKS.md",
+    "AWS SAA-CO3/RDS and Aurora and ElasticCache.md",
+    "AWS SAA-CO3/Route 53.md",
+    "AWS SAA-CO3/S3.md",
+    "AWS SAA-CO3/Lambda & DynamoDB & Serverless.md",
+    "AWS SAA-CO3/Integration and Messaging.md",
+    "AWS SAA-CO3/CloudFront.md",
+    "AWS SAA-CO3/Course.md",
     "AWS SAA-CO3/pasted_images/Pasted image 20250801132944.png",
     "AWS SAA-CO3/pasted_images/Pasted image 20250801132746.png",
     "AWS SAA-CO3/pasted_images/Pasted image 20250801132408.png",
@@ -178,30 +195,14 @@
     "AWS SAA-CO3/pasted_images/Pasted image 20250801124351.png",
     "AWS SAA-CO3/pasted_images/Pasted image 20250801124324.png",
     "AWS SAA-CO3/pasted_images/Pasted image 20250801124030.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250801123828.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250801123538.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250801123517.png",
-    "AWS SAA-CO3/ECS & EKS.md",
-    "AWS SAA-CO3/Lambda & DynamoDB & Serverless.md",
     "AWS SAA-CO3/IAM.md",
-    "AWS SAA-CO3/ELB.md",
-    "AWS SAA-CO3/CloudFront.md",
     "AWS SAA-CO3/Beanstalk.md",
     "AWS SAA-CO3/EC2.md",
-    "AWS SAA-CO3/Course.md",
-    "AWS SAA-CO3/EFS.md",
-    "AWS SAA-CO3/Integration and Messaging.md",
-    "AWS SAA-CO3/Route 53.md",
-    "AWS SAA-CO3/S3.md",
     "AWS SAA-CO3/Storage Extra.md",
-    "AWS SAA-CO3/RDS and Aurora and ElasticCache.md",
-    "2025-07-24.md",
-    "create a link.md",
     "AWS SAA-CO3/AWS Regions.md",
     "AWS SAA-CO3/pasted_images",
     "AWS SAA-CO3/test_images",
     "Untitled.canvas",
-    "Welcome.md",
     "Untitled 3.canvas",
     "Untitled 2.canvas",
     "Untitled 1.canvas",
