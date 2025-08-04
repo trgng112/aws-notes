@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AWS SAA-CO3/Machine Learning.md",
+                "file": "AWS SAA-CO3/Monitoring and Audit.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Machine Learning"
+              "title": "Monitoring and Audit"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "AWS SAA-CO3/Machine Learning.md",
+                "file": "AWS SAA-CO3/Monitoring and Audit.md",
                 "followCursor": true,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Machine Learning"
+              "title": "Outline of Monitoring and Audit"
             }
           }
         ],
@@ -170,6 +170,12 @@
   },
   "active": "971b4b1333f680ce",
   "lastOpenFiles": [
+    "AWS SAA-CO3/pasted_images/Pasted image 20250804191033.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250804191004.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250804190945.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250804185944.png",
+    "AWS SAA-CO3/Machine Learning.md",
+    "AWS SAA-CO3/Monitoring and Audit.md",
     "AWS SAA-CO3/pasted_images/Pasted image 20250804185020.png",
     "AWS SAA-CO3/pasted_images/Pasted image 20250804184839.png",
     "AWS SAA-CO3/pasted_images/Pasted image 20250804184646.png",
@@ -178,12 +184,7 @@
     "AWS SAA-CO3/pasted_images/Pasted image 20250803213312.png",
     "AWS SAA-CO3/pasted_images/Pasted image 20250803212145.png",
     "AWS SAA-CO3/pasted_images/Pasted image 20250803211916.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250803211846.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250803211842.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250803211756.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250803211443.png",
     "AWS SAA-CO3/Storage Extra.md",
-    "AWS SAA-CO3/Machine Learning.md",
     "AWS SAA-CO3/Lambda & DynamoDB & Serverless.md",
     "AWS SAA-CO3/Integration and Messaging.md",
     "AWS SAA-CO3/ECS & EKS.md",
