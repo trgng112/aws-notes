@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "14a1dddd8482c54a",
+        "id": "4b249aff3fbbbad8",
         "type": "tabs",
         "children": [
           {
-            "id": "633babe43014784c",
+            "id": "971b4b1333f680ce",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -143,8 +143,8 @@
               "type": "outline",
               "state": {
                 "file": "AWS SAA-CO3/Machine Learning.md",
-                "followCursor": false,
-                "showSearch": false,
+                "followCursor": true,
+                "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
@@ -156,7 +156,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 208.5
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -168,43 +168,43 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "633babe43014784c",
+  "active": "971b4b1333f680ce",
   "lastOpenFiles": [
+    "AWS SAA-CO3/pasted_images/Pasted image 20250804185020.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250804184839.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250804184646.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250804184041.png",
+    "AWS SAA-CO3/S3.md",
     "AWS SAA-CO3/pasted_images/Pasted image 20250803213312.png",
-    "AWS SAA-CO3/Data and Analytics.md",
-    "AWS SAA-CO3/Machine Learning.md",
     "AWS SAA-CO3/pasted_images/Pasted image 20250803212145.png",
     "AWS SAA-CO3/pasted_images/Pasted image 20250803211916.png",
     "AWS SAA-CO3/pasted_images/Pasted image 20250803211846.png",
     "AWS SAA-CO3/pasted_images/Pasted image 20250803211842.png",
     "AWS SAA-CO3/pasted_images/Pasted image 20250803211756.png",
     "AWS SAA-CO3/pasted_images/Pasted image 20250803211443.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250802135311.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250802135219.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250802134815.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250802134735.png",
-    "AWS SAA-CO3/Databases.md",
-    "Welcome.md",
-    "create a link.md",
-    "2025-07-24.md",
-    "AWS SAA-CO3/EFS.md",
-    "AWS SAA-CO3/ELB.md",
-    "AWS SAA-CO3/ECS & EKS.md",
-    "AWS SAA-CO3/RDS and Aurora and ElasticCache.md",
-    "AWS SAA-CO3/Route 53.md",
-    "AWS SAA-CO3/S3.md",
+    "AWS SAA-CO3/Storage Extra.md",
+    "AWS SAA-CO3/Machine Learning.md",
     "AWS SAA-CO3/Lambda & DynamoDB & Serverless.md",
     "AWS SAA-CO3/Integration and Messaging.md",
+    "AWS SAA-CO3/ECS & EKS.md",
+    "AWS SAA-CO3/Databases.md",
+    "AWS SAA-CO3/Data and Analytics.md",
     "AWS SAA-CO3/CloudFront.md",
-    "AWS SAA-CO3/Course.md",
-    "AWS SAA-CO3/IAM.md",
     "AWS SAA-CO3/Beanstalk.md",
+    "AWS SAA-CO3/Route 53.md",
     "AWS SAA-CO3/EC2.md",
-    "AWS SAA-CO3/Storage Extra.md",
+    "AWS SAA-CO3/EFS.md",
+    "AWS SAA-CO3/ELB.md",
+    "AWS SAA-CO3/RDS and Aurora and ElasticCache.md",
+    "AWS SAA-CO3/IAM.md",
+    "AWS SAA-CO3/Course.md",
+    "2025-07-24.md",
+    "create a link.md",
     "AWS SAA-CO3/AWS Regions.md",
     "AWS SAA-CO3/pasted_images",
     "AWS SAA-CO3/test_images",
     "Untitled.canvas",
+    "Welcome.md",
     "Untitled 3.canvas",
     "Untitled 2.canvas",
     "Untitled 1.canvas",
