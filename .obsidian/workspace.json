@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AWS SAA-CO3/Monitoring and Audit.md",
+                "file": "AWS SAA-CO3/IAM - advanced.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Monitoring and Audit"
+              "title": "IAM - advanced"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "AWS SAA-CO3/Monitoring and Audit.md",
+                "file": "AWS SAA-CO3/IAM - advanced.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Monitoring and Audit"
+              "title": "Outline of IAM - advanced"
             }
           }
         ],
@@ -170,19 +170,20 @@
   },
   "active": "633babe43014784c",
   "lastOpenFiles": [
-    "AWS SAA-CO3/pasted_images/Pasted image 20250805191346.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250805191113.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250805185221.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250805185205.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250805185119.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250805184953.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250805184915.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250805170300.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250805165313.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250805165312.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250805165032.png",
-    "AWS SAA-CO3/Machine Learning.md",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250806181807.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250806181433.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250806181402.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250806181040.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250806181027.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250806180714.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250806180552.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250806180309.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250806180204.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250806180127.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250806180052.png",
+    "AWS SAA-CO3/IAM - advanced.md",
     "AWS SAA-CO3/Monitoring and Audit.md",
+    "AWS SAA-CO3/Machine Learning.md",
     "AWS SAA-CO3/Data and Analytics.md",
     "AWS SAA-CO3/Databases.md",
     "Welcome.md",
