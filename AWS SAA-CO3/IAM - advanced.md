@@ -81,4 +81,40 @@
 	- Example: cost center, title , locale,...
 	- Use case: define permissions once, then modify AWS access by changing the attributes
 - ![[Pasted image 20250806181807.png]]
+
+## AWS Directory Services
+- ![[Pasted image 20250807115613.png]]
+- **AWS Managed Microsoft AD**
+	- Create your own AD in AWS, manage users locally, supports MFA
+	- Establish 'trust' connections with your on-premise AD
+- **AD Connector**
+	- Directory Gateway (proxy) to redirect to on-premise AD, supports MFA
+	- Users are manged on the on-premise AD
+- **Simple AD**
+	- AD-compatible managed directory on AWS
+	- Cannot be joined with on-premise AD
+- ![[Pasted image 20250807115836.png]]
+
+### Identity Center - Active Directory Setup
+- Connect to an AWS Managed Microsoft AD (Directory Service)
+	- Integration is out of the box
+	- ![[Pasted image 20250807115940.png]]
+- **Connect to a Self-Managed Directory**
+	- Create Two-way Trust Relationship using AWS Managed Microsoft AD
+	- Create an AD Connector
+	- ![[Pasted image 20250807120024.png]]
+
+## AWS Control Tower
+- Easy way to **set up and govern a secure and compliant multi account AWS environment based on best practices
+- AWS control tower uses AWS Organizations to create acconuts
+- Benefits:
+	- Automate the setup of your env in a few clicks
+	- Automate ongoing policy management using guardrails
+	- Detect policy violations and remediate them
+	- Monitor compliance through an interactive dashboard
+### Guardrails
+- Provides ongoing governance for your Control Tower Env (AWS accs)
+- **Preventive Guardrail - using SCPs** (Restrict Regions across all your accounts)
+- **Detective Guardrail - Using AWS Config**  (identify untagged resources)
+- ![[Pasted image 20250807120418.png]]
 - 
