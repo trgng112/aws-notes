@@ -201,8 +201,148 @@
 	- The API Gateway still lives in one region
 	- **The TLS cert must be in the same region as CloudFront**
 	- Then setup CNAME or (better) A-Alias record in Route 53
+	- Always us-east-1
 - Regional:
 	- For clients within the same region
 	- **The TLS Cert must be imported on API gateway, in the same region as the API stage**
 	- Then setup CNAME or (better) A-Alias record in Route 53
 - ![[Pasted image 20250807184309.png]]
+
+## Web Application Firewall - WAF
+- Protect your web app from common web exploits (Layer 7)
+- Layer is HTTP (vs Layer 4 is TCP/UDP)
+- Deploy on
+	- ALB
+	- API GW
+	- CloudFront
+	- AppSync GraphQL API
+	- Cognito User Pool
+- Define Web ACL (Web Access Control List) Rules:
+	- **IP Set: up to 10,000 IP addresses** - use multiple Rules for more IPs
+	- HTTP headers, HTTP body, URI strings Protects from common attack - **SQL Injection** and **Cross-Site Scripting**(XSS)
+	- Size constraints, geo-match (block countries)
+	- **Rate-based rules** (to count occurrences of events) - **for DDoS protection**
+- Web ACL are Regional except for cloudfront
+- A rule group is a reusable set of rules that you can add to a web ACL
+
+### Fixed IP while using WAF with a LB
+- WAF does not support the NLB (Layer 4)
+- We can use Global Accelerator for fixed  IP and WAF on the ALB
+- ![[Pasted image 20250808201509.png]]
+
+## AWS Shield: protect from DDoS attack
+- DDoS: Distributed Denial of Service - many requests at the same time
+- AWS Shield Standard:
+	- Free service that is activated for every AWS customer
+	- Provides protection from attacks such as SYN/UDP Floods, Reflection attacks and other layer 3 / layer 4 attacks
+- **AWS Shield Advanced**:
+	- Optional DDoS mitigation service ($3000 per month per org)
+	- Protect against more sophisticated attack on Ec2, ELB, Cloudfront, Global Accelerator, Route 53
+	- 24/7access to AWS DDoS response team (DRP)
+	- Protect against higher fees during usage spikes due to DDoS
+	- Shield Advanced automatic application layer DDoS mitigation automatically creates, evaluates and deploys AWS WAF rules to mitigate layer 7 attacks
+
+## Firewall Manager
+- Manage rules in all accounts of an AWS Org
+- Security policy: common set of security rules
+	- Waf rules (ALB,API GW, Cloudfront)
+	- AWS Shield Advanced (ALB,CLB,NLB, Elastic IP, CloudFront)
+	- Security Groups for EC2, ALB, ENI resources in VPC
+	- AWS Network Firewall (VPC level)
+	- Route 53 Resolver DNS Firewall
+	- Policies are created at the region level
+- **Rules are applied to new resources as they are created (good for compliance) across all and future accounts in your Organization**
+
+## WAF vs Firewall Manager vs Shield
+- **WAF,Shield,Firewall Manager are used together for comprehensive protection**
+- Define your Web ACL rules in WAF
+- For granular protection of your resources, WAF alone is the correct choice
+- If you want to use AWS WAF across accounts, accelerate WAF configuration, automate the protection of new resources, use Firewall Manager with WAF
+- Shield Advanced adds additional features on top of WAF, such as dedicated support from the Shield Response Team (SRT) and advanced reporting
+- If you're prone to frequent DDoS attacks, consider purchasing Shield Advanced
+
+## Best Practices for DDoS 
+### Resiliency Edge Location Mitigation (BP1,BP3)
+- ![[Pasted image 20250808202514.png]]
+- BP1 - CloudFront
+	- Web Application delivery at the edge
+	- Protect from DDoS Common Attack (SYN floods, UDP reflection...)
+- BP1 - Global Accelerator
+	- Access your application from the edge
+	- Integration with Shield for DDoS protection
+	- Helpful if your backend is not compatible with CloudFront
+- BP3 - Route 53
+	- Domain Name Resolution at the edge
+	- DDoS protection mechanism
+###  DDoS Mitigation
+- Infrastructure layer defense (BP1, BP3,BP6)
+	- Protect Amazon EC2 against high traffic
+	- That includes using Global Accelerator, Route 53, CloudFront, Elastic Load Balancing
+- EC2 with Auto Scaling (BP7)
+	- Helps scale in case of sudden traffic surges including a flash crowd or a DDoS attack
+- Elastic Load Balacing (BP6)
+	- ELB scales with the traffic increases and will distribute the trafffic to many EC2 instances
+### Application Layer Defense
+- Detect and filter malicious web requests (BP1,BP2)
+	- Cloudfront cache static content and serve it from edge locations, protecting your backend
+	- WAF is used on top of CloudFront and ALB to filter and block requests based on request signatures
+	- WAF rate-based rules can automatically block the IPs of bad actors
+	- Use managed rules on WAF to block attack based on IP reputation, or block anonymous Ips
+	- Cloudfront can block specific geographies
+- Shield Advanced (BP1,Bp2,Bp6)
+	- Shield advanced automatic application layer DDoS mitigation automatically creates eval and deploy WAF rules to mitigate layer 7 attacks
+
+### Attack surgace reduction
+- Obfuscating AWS resources (BP1,Bp4,BP6)
+	- using cloudfront, API GW, ELB to hide your backend resources
+- Security groups and network ACLs (BP5)
+	- Use SGs and NACLs to filter traffic based on specific IP at the subnet or ENI level
+	- Elastic IP are protected by AWS Shield Advanced
+- Protecting API endpoints (BP4)
+	- Hide Ec2 , lambda elsewhere
+	- Edge-optimized mode, or cloudfront + regional mode (more control for DDoS)
+	- WAF + API GW: burst limits , headers filtering, use API keys
+
+## Amazon Guardduty
+- Intelligent Threat discovery to protect your AW acc
+- Uses ML algo, anomaly detection, 3rd party data
+- one click to enable (30 days trial), no need to install software
+- Input data includes:
+	- **CloudTrail Events Logs**- unusual API calls, unauthorized deployments
+		- **CloudTrail Management Events:** create VPC subnet, create trail
+		- **CloudTrail S3 Data Events** - get objects, list objects, delete object,...
+	- **VPC Flow Logs**: unusual internal traffic, unusual IP address
+	- **DNS logs** - compromised EC2 instances sending encoded data within DNS queries
+	- **Optional features:** EKS audit logs, RDS & Aurora, EBS,Lambda,S3 data events,...
+- Can setup **EventBridge** rules to be notified in case of findings
+- EventBridge rules can target Lambda or SNS 
+- **Can protect against Cryptocurrency attacks (has a dedicated findings for it)**
+- ![[Pasted image 20250808203349.png]]
+
+## Amazon Inspector
+- Automated Security Assessments
+- For Ec2 instances:
+	- Leveraging the **AWS System Manager (SSM) agent**
+	- Analyze against **unintended network accessibility**
+	- Analyze the **running OS** against **known vulnerabilities**
+- **For container images push to Amazon ECR**
+	- Assessment of container images as they are pushed
+- **For lambda functions**
+	- Identifies software vulnerabilities in function code and package dependencies
+	- Assessment of functions as they are deployed
+- Reporting & integration with AWS security Hub
+- Send Findings to EventBridge
+- ![[Pasted image 20250808203606.png]]
+
+### What does Inspector evaluate?
+- **Remember: only for EC2 instances, Container Images & Lambda functions**
+- Continuous scanning of the infra, only when needed
+- Package vulnerabilities (EC2, ECR & Lambda) - database of CVE
+- Network readability (EC2)
+- A risk score is associated with all vulnerabilities for priritization
+
+
+## Amazon Macie
+- fully managed data security and data privacy service that uses **ML and pattern matching to discover and protect your sensitive data in AWS**
+- Macie helps identify and alert you to **sensitive data, such as personally identifiable information (PII)**
+- ![[Pasted image 20250808203824.png]]
