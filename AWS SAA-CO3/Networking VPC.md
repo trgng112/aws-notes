@@ -76,7 +76,7 @@
 - Route tables must also be edited
 - ![[Pasted image 20250809105623.png]]
 
-## Bastion Hosts
+c## Bastion Hosts
 - ![[Pasted image 20250809110046.png]]
 - We can use a bastion host to SSH into our private Ec2 instances
 - the bastion is in the public subnet which is connected to all other private subnets

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AWS SAA-CO3/Disaster Recovery & Migrations.md",
+                "file": "AWS SAA-CO3/Minor Architecture.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Disaster Recovery & Migrations"
+              "title": "Minor Architecture"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "AWS SAA-CO3/Disaster Recovery & Migrations.md",
+                "file": "AWS SAA-CO3/Minor Architecture.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Disaster Recovery & Migrations"
+              "title": "Outline of Minor Architecture"
             }
           }
         ],
@@ -170,19 +170,20 @@
   },
   "active": "633babe43014784c",
   "lastOpenFiles": [
-    "AWS SAA-CO3/pasted_images/Pasted image 20250811181821.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250811181349.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250811180732.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250811180627.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250811180107.png",
-    "AWS SAA-CO3/IAM - advanced.md",
+    "AWS SAA-CO3/Other minor services.md",
+    "AWS SAA-CO3/Minor Architecture.md",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250812112608.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250812112604.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250812112559.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250812112524.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250812112517.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250812112459.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250812112453.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250812112446.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250812112443.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250812112436.png",
     "AWS SAA-CO3/Disaster Recovery & Migrations.md",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250811175942.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250811175343.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250811175256.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250811174931.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250811174524.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250811174503.png",
+    "AWS SAA-CO3/IAM - advanced.md",
     "pasted_images",
     "AWS SAA-CO3/Security.md",
     "AWS SAA-CO3/Networking VPC.md",
@@ -206,7 +207,6 @@
     "AWS SAA-CO3/IAM.md",
     "AWS SAA-CO3/Beanstalk.md",
     "AWS SAA-CO3/EC2.md",
-    "AWS SAA-CO3/Storage Extra.md",
     "AWS SAA-CO3/pasted_images",
     "AWS SAA-CO3/test_images",
     "Untitled.canvas",
