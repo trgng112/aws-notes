@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "771a5dd1758e7010",
+        "id": "14a1dddd8482c54a",
         "type": "tabs",
         "children": [
           {
-            "id": "b564f8f81dba6b34",
+            "id": "633babe43014784c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AWS SAA-CO3/Networking VPC.md",
+                "file": "AWS SAA-CO3/Disaster Recovery & Migrations.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Networking VPC"
+              "title": "Disaster Recovery & Migrations"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "AWS SAA-CO3/Networking VPC.md",
+                "file": "AWS SAA-CO3/Disaster Recovery & Migrations.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Networking VPC"
+              "title": "Outline of Disaster Recovery & Migrations"
             }
           }
         ],
@@ -168,24 +168,24 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b564f8f81dba6b34",
+  "active": "633babe43014784c",
   "lastOpenFiles": [
-    "AWS SAA-CO3/pasted_images/Pasted image 20250810200339.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250810200222.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250810195942.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250810195837.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250810195624.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250810195406.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250810194813.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250810194444.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250810194338.png",
-    "AWS SAA-CO3/Networking VPC.md",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250810194046.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250810193928.png",
-    "AWS SAA-CO3/Security.md",
-    "Untitled.md",
-    "pasted_images",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250811181821.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250811181349.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250811180732.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250811180627.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250811180107.png",
     "AWS SAA-CO3/IAM - advanced.md",
+    "AWS SAA-CO3/Disaster Recovery & Migrations.md",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250811175942.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250811175343.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250811175256.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250811174931.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250811174524.png",
+    "AWS SAA-CO3/pasted_images/Pasted image 20250811174503.png",
+    "pasted_images",
+    "AWS SAA-CO3/Security.md",
+    "AWS SAA-CO3/Networking VPC.md",
     "AWS SAA-CO3/Monitoring and Audit.md",
     "AWS SAA-CO3/Machine Learning.md",
     "AWS SAA-CO3/Data and Analytics.md",
