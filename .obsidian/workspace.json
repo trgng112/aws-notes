@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "f4bb67eeffaed79b",
+        "id": "bcf58fb32018ae4c",
         "type": "tabs",
         "children": [
           {
-            "id": "698d9a6af0500835",
+            "id": "d8ad7c8277bfbbb3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AWS SAA-CO3/Other minor services.md",
+                "file": "AWS SAA-CO3/EC2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Other minor services"
+              "title": "EC2"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "Global Accelerator",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,11 +74,12 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 391.5
   },
   "right": {
     "id": "fc75fbc8c0d5b240",
@@ -142,13 +143,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "AWS SAA-CO3/Other minor services.md",
+                "file": "AWS SAA-CO3/EC2.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Other minor services"
+              "title": "Outline of EC2"
             }
           }
         ],
@@ -168,8 +169,24 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "698d9a6af0500835",
+  "active": "62dd2ea2433a216e",
   "lastOpenFiles": [
+    "AWS SAA-CO3/Data and Analytics.md",
+    "AWS SAA-CO3/Lambda & DynamoDB & Serverless.md",
+    "AWS SAA-CO3/Databases.md",
+    "AWS SAA-CO3/Disaster Recovery & Migrations.md",
+    "AWS SAA-CO3/ELB.md",
+    "AWS SAA-CO3/ECS & EKS.md",
+    "AWS SAA-CO3/Integration and Messaging.md",
+    "AWS SAA-CO3/Monitoring and Audit.md",
+    "AWS SAA-CO3/Machine Learning.md",
+    "AWS SAA-CO3/Storage Extra.md",
+    "AWS SAA-CO3/CloudFront.md",
+    "AWS SAA-CO3/Security.md",
+    "AWS SAA-CO3/Networking VPC.md",
+    "AWS SAA-CO3/EC2.md",
+    "2025-08-13.md",
+    "AWS SAA-CO3/Other minor services.md",
     "AWS SAA-CO3/pasted_images/Pasted image 20250812164029.png",
     "AWS SAA-CO3/pasted_images/Pasted image 20250812163932.png",
     "AWS SAA-CO3/pasted_images/Pasted image 20250812163709.png",
@@ -180,33 +197,17 @@
     "AWS SAA-CO3/pasted_images/Pasted image 20250812163052.png",
     "AWS SAA-CO3/pasted_images/Pasted image 20250812163029.png",
     "AWS SAA-CO3/pasted_images/Pasted image 20250812163014.png",
-    "AWS SAA-CO3/pasted_images/Pasted image 20250812163006.png",
-    "AWS SAA-CO3/Other minor services.md",
     "AWS SAA-CO3/Minor Architecture.md",
-    "AWS SAA-CO3/Disaster Recovery & Migrations.md",
     "AWS SAA-CO3/IAM - advanced.md",
     "pasted_images",
-    "AWS SAA-CO3/Security.md",
-    "AWS SAA-CO3/Networking VPC.md",
-    "AWS SAA-CO3/Monitoring and Audit.md",
-    "AWS SAA-CO3/Machine Learning.md",
-    "AWS SAA-CO3/Data and Analytics.md",
-    "AWS SAA-CO3/Databases.md",
     "Welcome.md",
     "create a link.md",
     "2025-07-24.md",
     "AWS SAA-CO3/EFS.md",
-    "AWS SAA-CO3/ELB.md",
-    "AWS SAA-CO3/ECS & EKS.md",
     "AWS SAA-CO3/RDS and Aurora and ElasticCache.md",
     "AWS SAA-CO3/Route 53.md",
     "AWS SAA-CO3/S3.md",
-    "AWS SAA-CO3/Lambda & DynamoDB & Serverless.md",
-    "AWS SAA-CO3/Integration and Messaging.md",
-    "AWS SAA-CO3/CloudFront.md",
     "AWS SAA-CO3/Course.md",
-    "AWS SAA-CO3/IAM.md",
-    "AWS SAA-CO3/Beanstalk.md",
     "AWS SAA-CO3/pasted_images",
     "AWS SAA-CO3/test_images",
     "Untitled.canvas",
